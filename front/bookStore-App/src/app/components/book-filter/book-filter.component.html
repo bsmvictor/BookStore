@@ -1,0 +1,94 @@
+<div class="accordion" id="filtroAccordion">
+
+  <!-- Avaliações -->
+  <div class="accordion-item border rounded mb-3">
+    <h6 class="accordion-header">
+      <button class="w-100 text-start bg-white border-0 fw-bold p-2">
+        Avaliações
+      </button>
+    </h6>
+    <div id="avaliacoes" class="accordion-collapse collapse show">
+      <div class="accordion-body p-2">
+        <div *ngFor="let nota of [5, 4, 3, 2, 1]" class="form-check d-flex align-items-center gap-2">
+          <input class="form-check-input mt-0" type="checkbox" [value]="nota" id="estrela{{nota}}">
+          <label class="form-check-label d-flex gap-1 align-items-center" for="estrela{{nota}}">
+            <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+              <i class="bi" [ngClass]="star <= nota ? 'bi-star-fill text-warning' : 'bi-star text-muted'"></i>
+            </ng-container>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Editora -->
+  <div class="accordion-item border rounded mb-3">
+    <h6 class="accordion-header">
+      <button class="w-100 text-start bg-white border-0 fw-bold p-2">
+        Editora
+      </button>
+    </h6>
+    <div id="marcas" class="accordion-collapse collapse show">
+      <div class="accordion-body p-2">
+        <div class="form-check" *ngFor="let editora of editoras">
+          <input class="form-check-input" type="checkbox" [value]="editora" id="{{editora}}">
+          <label class="form-check-label" [for]="editora">{{ editora }}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Preço -->
+  <div class="accordion-item border rounded mb-3">
+    <h6 class="accordion-header">
+      <button class="w-100 text-start bg-white border-0 fw-bold p-2">
+        Preço
+      </button>
+    </h6>
+    <div id="preco" class="accordion-collapse collapse show">
+      <div class="accordion-body p-2">
+        <div class="d-flex justify-content-between mt-2">
+          <input class="form-control form-control-sm me-2" type="number" [(ngModel)]="precoMin" placeholder="Mínimo">
+          <input class="form-control form-control-sm" type="number" [(ngModel)]="precoMax" placeholder="Máximo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Autores -->
+  <div class="accordion-item border rounded mb-3">
+    <h6 class="accordion-header">
+      <button class="w-100 text-start bg-white border-0 fw-bold p-2">
+        Autor
+      </button>
+    </h6>
+    <div id="autores" class="accordion-collapse collapse show">
+      <div class="accordion-body p-2">
+        <div class="form-check" *ngFor="let autor of autores">
+          <input class="form-check-input" type="checkbox" [value]="autor" id="autor{{autor}}">
+          <label class="form-check-label" [for]="'autor' + autor">{{ autor }}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Ano -->
+    <div class="accordion-item border rounded mb-3">
+      <h6 class="accordion-header">
+        <button class="w-100 text-start bg-white border-0 fw-bold p-2">
+          Ano de publicação
+        </button>
+      </h6>
+      <div id="preco" class="accordion-collapse collapse show">
+        <div class="accordion-body p-2">
+          <div class="d-flex justify-content-between mt-2">
+            <input class="form-control form-control-sm me-2" type="number" [(ngModel)]="anoMin" placeholder="Mínimo">
+            <input class="form-control form-control-sm" type="number" [(ngModel)]="anoMax" placeholder="Máximo">
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

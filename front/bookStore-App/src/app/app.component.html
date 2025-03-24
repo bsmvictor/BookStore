@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+
+<div class="m-4">
+<!-- Container dos filtros e cards -->
+<div class="container-fluid">
+  <div class="row m-0 align-content-center">
+
+  <!-- Container Filtros -->
+  <div class="col-12 col-lg-3 mb-lg-4 mb-sm-2">
+    <!-- Filtro lateral fixo (somente em telas grandes) -->
+    <div class="d-none d-lg-block position-sticky" style="top: 80px;">
+      <app-book-filter></app-book-filter>
+    </div>
+
+      <!-- Botão e Offcanvas para telas pequenas -->
+      <div class="d-flex d-lg-none flex-column align-items-center gap-2 mx-3 my-2">
+        <!-- Linha com os dois botões de ordenar -->
+        <div class="d-flex w-100 gap-2">
+          <button class="btn btn-primary flex-fill" type="button">
+            <i class="bi bi-sort-alpha-down"></i> Ordenar
+          </button>
+          <button class="btn btn-success flex-fill" type="button">
+            <i class="bi bi-currency-dollar"></i> Ordenar
+          </button>
+        </div>
+
+        <!-- Botão de filtros abaixo -->
+        <button class="btn btn-secondary w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#filtroOffcanvas">
+          <i class="bi bi-sliders"></i> Filtros
+        </button>
+      </div>
+
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="filtroOffcanvas" aria-labelledby="filtroOffcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="filtroOffcanvasLabel">Filtros</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <app-book-filter ngSkipHydration></app-book-filter>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container Cards -->
+    <div class="col-12 col-lg-9 mb-4 p-2">
+      <div class="container-fluid px-1">
+        <app-book-card></app-book-card>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
