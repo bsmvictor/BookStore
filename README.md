@@ -1,4 +1,4 @@
-# BookStore - Sistema de Gerenciamento de Livros
+# BookStore - Sistema de Gerenciamento de Livros (WIP)
 
 O BookStore é uma aplicação Full Stack para gerenciamento de livros em uma biblioteca virtual. A aplicação permite o cadastro, edição, listagem e remoção de livros, com backend em .NET e frontend em Angular.
 
